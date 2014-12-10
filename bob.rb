@@ -3,39 +3,36 @@ class Bob
 
 def hey(text)
 	
-	if textIsEmpty?(text)
+	if text_empty?(text)
 		return "Fine. Be that way!"
 	end
 	
 
-	if textYellsAtMe?(text)
+	if text_yells?(text)
 		return "Whoa, chill out!"
 	end
 
-	if textIsQuestion?(text)
+	if text_asks?(text)
 		return "Sure."
 	end
 	
-	return "Whatever."
+	"Whatever."
 
 end
 
-def textIsEmpty?(text)
-	return text.strip.empty?
+def text_empty?(text)
+	text.strip.empty?
 end
 
-def textYellsAtMe?(text)
-	# check if text contains letters 
-	if text=~ /[a-zA-Z]/
-		if text == text.upcase
-			return true
-		end
+def text_yells?(text)
+	if !(text.downcase == text.upcase) && (text.upcase == text)
+		return true
 	end
-	return false
+	false
 end
 
-def textIsQuestion?(text)
-	return text.end_with?("?");
+def text_asks?(text)
+	text.end_with?("?");
 end
 
 
