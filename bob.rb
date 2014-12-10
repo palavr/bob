@@ -25,10 +25,7 @@ def text_empty?(text)
 end
 
 def text_yells?(text)
-	if !(text.downcase == text.upcase) && (text.upcase == text)
-		return true
-	end
-	false
+	(!(text.downcase == text.upcase) && (text.upcase == text)) ? true : false
 end
 
 def text_asks?(text)
